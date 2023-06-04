@@ -1,9 +1,10 @@
-import { useState } from "react";
+
 import { Switch, Route, NavLink } from "react-router-dom";
 import Movie from "./components/Movie";
 import FavMovie from "./components/FavMovie";
 import { useDispatch, useSelector, } from "react-redux";
 import { backToFirst , deleteMovie , previousMovie, nextMovie } from "./store/actions/movieActions";
+import { addFavorite } from "./store/actions/favoritesActions";
 
 function App() {
   
@@ -19,10 +20,7 @@ function App() {
   }
 
 
-  function sonrakiFilm() {
-    setSira(sira + 1);
-  }
-
+  
   return (
     <div className="wrapper max-w-2xl mx-auto">
       <nav className="flex text-2xl pb-6 pt-8 gap-2 justify-center">
