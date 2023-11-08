@@ -18,10 +18,12 @@ import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(loadInitialFavs());
     dispatch(loadInitialMovies());
-  }, []);
+  }, [dispatch]);
+
   const movies = useSelector((store) => store.moviesReducer.movies); 
    const favMovies = useSelector((store) => store.favReducer.favs);
   const sira = useSelector((store) => store.moviesReducer.place);
